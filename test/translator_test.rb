@@ -12,6 +12,7 @@ class TranslatorTest < Minitest::Test
     end
 
     def test_eng_to_morse_returns_morse_code
+        
         translator = Translator.new
 
         assert_equal "......-...-..--- .-----.-..-..-..", translator.eng_to_morse("hello world")
@@ -24,6 +25,7 @@ class TranslatorTest < Minitest::Test
     end
 
     def test_eng_to_morse_works_with_numbers
+        # skip
         translator = Translator.new
 
         assert_equal "-......-.. .-.-.. ...-- ..........--....", translator.eng_to_morse("There are 3 ships")

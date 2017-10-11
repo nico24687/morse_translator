@@ -41,23 +41,16 @@ class Translator
         }
     end 
 
-    def eng_to_morse(word)
-        if word == "hello world"
-            @morse_dict["h"] + @morse_dict["e"] + @morse_dict["l"] + @morse_dict["l"] + @morse_dict["o"] + " " + @morse_dict["w"] + @morse_dict["o"] + @morse_dict["r"] +  @morse_dict["l"] + @morse_dict["d"]
-        elsif word == "There are 3 ships" 
-            "-......-.. .-.-.. ...-- ..........--...."
-        else 
-            "......-...-..--- .-----.-..-..-.."
-        end 
-    end
+    def eng_to_morse(phrase)
+        split_letters = phrase.downcase.chars
+        
+        result_of_morse_look_up = split_letters.map do |letter|
+            @morse_dict[letter]
+        end
+        result_of_morse_look_up.join("") 
+    end 
+
 end
-
-
-
-# word.chars
-# word.chars.map do |letter|
-#     morse_dict
-# end
 
 
 
