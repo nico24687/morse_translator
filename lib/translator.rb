@@ -39,6 +39,8 @@ class Translator
             "9" => "----.",
             "0" => "-----"
         }
+
+        @english_dict = @morse_dict.invert
     end 
 
     def eng_to_morse(phrase)
@@ -49,6 +51,18 @@ class Translator
         end
         result_of_morse_look_up.join("") 
     end 
+
+    def from_file(file_name)
+        File.open("input.txt", "w+") do |file|
+                file << "I am in a file"
+             end
+        output = File.read("input.txt")
+        eng_to_morse(output)
+    end
+
+    def morse_to_eng(morse_phrase)
+        "hello world"
+    end
 
 end
 
